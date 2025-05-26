@@ -1,6 +1,6 @@
 /** \file FinalExam_Practice.cpp
  * \brief Practice for the final exam.
- * \author Elizaveta Vasilieva
+ * \author me
  * \date 26/who cares
  * \copyright University of Nicosia
  */
@@ -44,6 +44,12 @@ int main() {
 			break;
 		case 3:
 			allPositive(array, SIZE);
+			if (allPositive(array, SIZE)) {
+
+				cout << "shu zi dou shi zheng shu\n";
+			} else {
+				cout << "shagua, ta men bu shi\n";
+			}
 			break;
 		case 4:
 			break; //no code needed
@@ -68,10 +74,12 @@ int main() {
  */
 double sumOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
 
+	assert(maxSize > 0);
 	assert(startIndex < endIndex);
 	double sum = 0.0;
 
 	for (int i = startIndex; i < endIndex; i++) {
+
 		sum += arr[i];
 	}
 
@@ -88,10 +96,12 @@ double sumOfRange(const double arr[], const int startIndex, const int endIndex, 
  */
 double productOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
 
+	assert(maxSize > 0);
 	assert(startIndex < endIndex);
 	double product = 1.0;
 
 	for (int i = startIndex; i < endIndex; i++) {
+
 		product *= arr[i];
 	}
 
@@ -99,6 +109,16 @@ double productOfRange(const double arr[], const int startIndex, const int endInd
 }
 
 bool allPositive(const double arr[], const int maxSize) {
+
+	assert(maxSize > 0);
+
+	for (int i = 0; i < maxSize; i++) {
+
+		if (arr[i] < 0) {
+
+			return false;
+		}
+	}
 
 	return true;
 }
