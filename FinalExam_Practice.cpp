@@ -22,13 +22,33 @@ int main() {
 	int choice;
 	const int SIZE = 5;
 	double array[SIZE] = { 1.3, 2.2, -3.5, 0.0, 10.2 };
+	const int start = 0, end = SIZE - 1;
 
-	cout << "1) Sum of range\n";
+	cout << "\n1) Sum of range\n";
 	cout << "2) Product of range\n";
 	cout << "3) Check if all positive\n";
 	cout << "4) Exit\n";
-	cout << "Please enter your choice: ";
+	cout << "enter choice desu: ";
 	cin >> choice;
+
+	do {
+		switch (choice) {
+		case 1:
+			sumOfRange(array, start, end, SIZE);
+			break;
+		case 2:
+			productOfRange(array, start, end, SIZE);
+			break;
+		case 3:
+			allPositive(array, SIZE);
+			break;
+		case 4:
+			break; //no code needed
+		default:
+			cout << "Invalid Choice, try again bro\n";
+			break;
+		}
+	}
 
 	return 0;
 }
