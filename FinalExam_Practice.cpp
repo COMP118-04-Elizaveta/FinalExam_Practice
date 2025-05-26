@@ -35,15 +35,12 @@ int main() {
 
 		switch (choice) {
 		case 1:
-			sumOfRange(array, start, end, SIZE);
 			cout << "Sum of range [" << start << ", " << end << "] is: " << sumOfRange(array, start, end, SIZE) << endl;
 			break;
 		case 2:
-			productOfRange(array, start, end, SIZE);
 			cout << "Product of range [" << start << ", " << end << "] is: " << productOfRange(array, start, end, SIZE) << endl;
 			break;
 		case 3:
-			allPositive(array, SIZE);
 			if (allPositive(array, SIZE)) {
 
 				cout << "shu zi dou shi zheng shu\n";
