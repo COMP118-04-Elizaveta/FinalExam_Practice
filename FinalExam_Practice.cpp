@@ -27,7 +27,7 @@ int main() {
 	cout << "2) Product of range\n";
 	cout << "3) Check if all positive\n";
 	cout << "4) Exit\n";
-	cout << "Enter your choice: ";
+	cout << "Please enter your choice: ";
 	cin >> choice;
 
 	return 0;
