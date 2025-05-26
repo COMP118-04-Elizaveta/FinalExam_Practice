@@ -6,11 +6,12 @@
  */
 
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 //function prototypes
-double sumOfRange(const double arr[], int startIndex, int endIndex, const int maxSize);
-double productOfRange(const double arr[], int startIndex, int endIndex, const int maxSize);
+double sumOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize);
+double productOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize);
 bool allPositive(const double arr[], const int maxSize);
 
 /**
@@ -22,19 +23,20 @@ int main() {
 	int choice;
 	const int SIZE = 5;
 	double array[SIZE] = { 1.3, 2.2, -3.5, 0.0, 10.2 };
-	const int start = 0, end = SIZE - 1;
-
-	cout << "\n1) Sum of range\n";
-	cout << "2) Product of range\n";
-	cout << "3) Check if all positive\n";
-	cout << "4) Exit\n";
-	cout << "enter choice desu: ";
-	cin >> choice;
+	const int start = 0, end = SIZE;
 
 	do {
+		cout << "\n1) Sum of range\n";
+		cout << "2) Product of range\n";
+		cout << "3) Check if all positive\n";
+		cout << "4) Exit\n";
+		cout << "enter choice desu: ";
+		cin >> choice;
+
 		switch (choice) {
 		case 1:
 			sumOfRange(array, start, end, SIZE);
+			cout << "Sum of range [" << start << ", " << end << "] is: " << sumOfRange(array, start, end, SIZE) << endl;
 			break;
 		case 2:
 			productOfRange(array, start, end, SIZE);
@@ -45,10 +47,42 @@ int main() {
 		case 4:
 			break; //no code needed
 		default:
-			cout << "Invalid Choice, try again bro\n";
+			cerr << "Invalid Choice, try again xiongdi\n";
 			break;
 		}
 	} while (choice != 4);
 
+	cout << "zai jian\n";
+
 	return 0;
+}
+
+/**
+ * Function <code>sumOfRange</code> calculates the sum of elements in a specified range of an array.
+ * @param arr The array of doubles.
+ * @param startIndex The starting index of the range.
+ * @param endIndex The ending index of the range.
+ * @param maxSize The maximum size of the array.
+ * @return Returns the sum of the elements in the specified range.
+ */
+double sumOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
+	assert(startIndex < endIndex);
+	double sum = 0.0;
+
+	for (int i = startIndex; i < endIndex; i++) {
+		sum += arr[i];
+	}
+
+	return sum;
+}
+
+double productOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
+
+	double product = 1.0;
+	return product;
+}
+
+bool allPositive(const double arr[], const int maxSize) {
+
+	return true;
 }
