@@ -40,6 +40,7 @@ int main() {
 			break;
 		case 2:
 			productOfRange(array, start, end, SIZE);
+			cout << "Product of range [" << start << ", " << end << "] is: " << productOfRange(array, start, end, SIZE) << endl;
 			break;
 		case 3:
 			allPositive(array, SIZE);
@@ -66,6 +67,7 @@ int main() {
  * @return Returns the sum of the elements in the specified range.
  */
 double sumOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
+
 	assert(startIndex < endIndex);
 	double sum = 0.0;
 
@@ -76,9 +78,23 @@ double sumOfRange(const double arr[], const int startIndex, const int endIndex, 
 	return sum;
 }
 
+/**
+ * Function <code>productOfRange</code> calculates the product of elements in a specified range of an array.
+ * @param arr The array of doubles.
+ * @param startIndex The starting index of the range.
+ * @param endIndex The ending index of the range.
+ * @param maxSize The maximum size of the array.
+ * @return Returns the product of the elements in the specified range.
+ */
 double productOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
 
+	assert(startIndex < endIndex);
 	double product = 1.0;
+
+	for (int i = startIndex; i < endIndex; i++) {
+		product *= arr[i];
+	}
+
 	return product;
 }
 
