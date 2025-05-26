@@ -108,6 +108,12 @@ double productOfRange(const double arr[], const int startIndex, const int endInd
 	return product;
 }
 
+/**
+ * Function <code>allPositive</code> checks if all elements in an array are positive.
+ * @param arr The array of doubles.
+ * @param maxSize The maximum size of the array.
+ * @return Returns true if all elements are positive, false otherwise.
+ */
 bool allPositive(const double arr[], const int maxSize) {
 
 	assert(maxSize > 0);
