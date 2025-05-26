@@ -48,7 +48,7 @@ int main() {
 			cout << "Invalid Choice, try again bro\n";
 			break;
 		}
-	}
+	} while (choice != 4);
 
 	return 0;
 }
