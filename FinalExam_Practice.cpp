@@ -22,7 +22,7 @@ int main() {
 
 	int choice;
 	const int SIZE = 5;
-	double array[SIZE] = { 1.3, 2.2, -3.5, 0.0, 10.2 };
+	const double array[SIZE] = { 1.3, 2.2, -3.5, 0.0, 10.2 };
 	const int start = 0, end = SIZE;
 
 	do {
@@ -72,7 +72,7 @@ int main() {
 double sumOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
 
 	assert(maxSize > 0);
-	assert(startIndex < endIndex);
+	assert(startIndex <= endIndex);
 	double sum = 0.0;
 
 	for (int i = startIndex; i < endIndex; i++) {
@@ -94,7 +94,7 @@ double sumOfRange(const double arr[], const int startIndex, const int endIndex, 
 double productOfRange(const double arr[], const int startIndex, const int endIndex, const int maxSize) {
 
 	assert(maxSize > 0);
-	assert(startIndex < endIndex);
+	assert(startIndex <= endIndex);
 	double product = 1.0;
 
 	for (int i = startIndex; i < endIndex; i++) {
